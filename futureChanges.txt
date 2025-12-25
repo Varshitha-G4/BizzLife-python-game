@@ -1,0 +1,5 @@
+run the BizzLife_final.py file
+
+1. First of all, change the working of the     bank.(The digits are being overwritten)
+2. Instead of changing the background color, give an option to change the color of the pawns
+3. Give a warning when the pawn exceeds the count of the dice
