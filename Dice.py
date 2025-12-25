@@ -9,7 +9,7 @@ def dice_click():
     window1.title("Dice")
 
 
-    dice = ["dice_1.png", "dice_2.png","dice_3.png", "dice_4.png", "dice_5.png", "dice_6.png"]
+    dice = ["images\dice_1.png", "images\dice_2.png","images\dice_3.png", "images\dice_4.png", "images\dice_5.png", "images\dice_6.png"]
     image1 = ImageTk.PhotoImage(Image.open(random.choice(dice)))  # Use ImageTk.PhotoImage
 
     label1 = Label(window1, image=image1)
