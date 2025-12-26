@@ -11,3 +11,12 @@ Solution:
 
 Key takeaway:
 - Canvas + Frame is required for scrollable layouts in Tkinter
+
+## Removed overwriting problem (ver2)
+
+Problem:
+- When the money is deducted from bank, if the money changes from, for example 4 digit to 3 digit, the values of the previous numbers was shown since it was over writing
+
+Solution:
+- Created a new array to store the updated values
+- Takes the values from the array and renders on the screen instead of overwriting
