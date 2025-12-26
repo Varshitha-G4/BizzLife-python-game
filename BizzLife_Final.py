@@ -103,6 +103,7 @@ class Game:
 
 if __name__ == "__main__":
     root = Tk()
+    root.state('zoomed')
     game = Game(root)
 
     dice_button = Button(game.game_frame, bg="#26dc93", fg="#000000", command=Dice.dice_click, font=("Comic Sans", 14), text="ROLL",activebackground="#26bedc")
