@@ -19,7 +19,9 @@ This project was developed as a learning exercise to understand GUI frameworks, 
 
 📽 **Project Walkthrough Video:**  
 
-https://github.com/user-attachments/assets/8ca36cfb-5ee9-4ccd-a730-553bd651dbd7
+
+https://github.com/user-attachments/assets/8dc039df-2e42-402c-af51-efa664c3e4fd
+
 
 
 
