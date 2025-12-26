@@ -17,7 +17,28 @@ class Game:
     def __init__(self, master):
         self.master = master
         self.master.title("BizzLife")
-        self.master.geometry("1568x1010")
+        
+        #screen dimensions
+        screen_width = self.master.winfo_screenwidth()
+        screen_height = self.master.winfo_screenheight()
+        
+        #Game board size
+        game_width = 1568
+        game_height = 1010
+
+        self.canvas = Canvas(self.master, bg="white")
+        h_scrollbar = Scrollbar(self.master, orient="horizontal", command=self.canvas.xview)
+        # v_scrollbar = Scrollbar(self.master, orient="vertical", command=self.canvas.yview)
+        self.canvas.configure(xscrollcommand=h_scrollbar.set)
+        h_scrollbar.pack(side="bottom", fill="x")
+        # v_scrollbar.pack(side="right", fill="y")
+        self.canvas.pack(side="left", fill="both", expand=True)
+
+        #put all the widgets inside the canvas by creating a frame
+        self.game_frame = Frame(self.canvas, width=game_width, height=game_height)
+        self.canvas.create_window((0, 0), window=self.game_frame, anchor="nw")
+
+        self.master = self.game_frame
 
         BizzLife_Buttons.create_buttons(self)
         BizzLife_pointers.create_pointers(self)
@@ -28,9 +49,14 @@ class Game:
         master.bind("<a>", lambda event: pointer_movement.move_pointer(self, "left", self.pointer2))
 
 
-        color_button = Button(bg="#26dc93", fg="#000000", command=self.choose_color, font=("Comic Sans", 14),
+        color_button = Button(self.master, bg="#26dc93", fg="#000000", command=self.choose_color, font=("Comic Sans", 14),
                               text="CHOOSE COLOR", activebackground="#26bedc")
         color_button.place(x=740, y=742)
+
+        # Configure scroll region
+        self.game_frame.update_idletasks()
+        self.canvas.config(scrollregion=self.canvas.bbox("all"))
+
     def choose_color(self):
         choose_color(self.master)
 
@@ -79,15 +105,14 @@ if __name__ == "__main__":
     root = Tk()
     game = Game(root)
 
-    dice_button = Button(bg="#26dc93", fg="#000000", command=Dice.dice_click, font=("Comic Sans", 14), text="ROLL",activebackground="#26bedc")
+    dice_button = Button(game.game_frame, bg="#26dc93", fg="#000000", command=Dice.dice_click, font=("Comic Sans", 14), text="ROLL",activebackground="#26bedc")
     dice_button.place(x=130, y=742)
 
-    rules_button = Button(bg="#26dc93", fg="#000000",command=BizzLife_Rules.click_rules, font=("Comic Sans", 14), text="RULES",activebackground="#26bedc")
+    rules_button = Button(game.game_frame, bg="#26dc93", fg="#000000",command=BizzLife_Rules.click_rules, font=("Comic Sans", 14), text="RULES",activebackground="#26bedc")
     rules_button.place(x=550, y=742)
 
-    bank_button = Button(bg="#26dc93", fg="#000000", command=BizzLife_Bank.click_balance, font=("Comic Sans", 14),text="BALANCE", activebackground="#26bedc")
+    bank_button = Button(game.game_frame, bg="#26dc93", fg="#000000", command=BizzLife_Bank.click_balance, font=("Comic Sans", 14),text="BALANCE", activebackground="#26bedc")
     bank_button.place(x=320, y=742)
 
 
     root.mainloop()
-

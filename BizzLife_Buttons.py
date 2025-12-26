@@ -25,7 +25,7 @@ def create_buttons(self):
     ]
 
     for i, position in enumerate(positions):
-        button = Button(fg="black", bg="#f15874", height=5, width=12, padx=5, pady=5,
+        button = Button(self.master, fg="black", bg="#f15874", height=5, width=12, padx=5, pady=5,
                         command=lambda i=i: self.button_click(i + 1))
 
         # Change the color of every 3rd button to yellow
@@ -39,4 +39,3 @@ def create_buttons(self):
         #adding the positions to a new list to form grids
 
         self.buttons.append(button)
-
