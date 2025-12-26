@@ -5,7 +5,7 @@ from tkinter import *
 namelist=["player1","player2"]
 
 
-def score(screen, namelist, money, initial_money,name, buyorsell, amount):
+def score(screen, namelist, money, initial_money,name, buyorsell, amount, money_labels):
 
   
     index = namelist.index(name)
@@ -16,8 +16,7 @@ def score(screen, namelist, money, initial_money,name, buyorsell, amount):
         amountadded = int(money[index]) - int(amount)
         money[index] = amountadded
     placey = 80
-    for i in money:
-        moneydroplabel = Label(screen, text=i, font="bold")
-        moneydroplabel.place(x=200, y=placey)
+    for i, money_value in enumerate(money):
+        money_labels[i].config(text=str(money_value))
 
         placey += 35

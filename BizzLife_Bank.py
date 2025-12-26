@@ -17,6 +17,7 @@ def click_balance():
         money=[]
         for i in namelist:
             money.append(initial_money)             #EACH PLAYER WILL HAVE INITIAL MONEY ADDED TO THE LIST
+        money_labels = []
 
         for j in namelist:
             namedroplabels=Label(screen,text=j,font="bold,16")
@@ -24,6 +25,8 @@ def click_balance():
 
             moneydroplabel=Label(screen,text=initial_money,font="bold,16")
             moneydroplabel.place(x=200,y=placey)
+
+            money_labels.append(moneydroplabel) #to prevent overwriting
 
             bizzlabel=Label(screen,text="Bizz",font="italic")
             bizzlabel.place(x=270,y=placey)
@@ -54,7 +57,8 @@ def click_balance():
         amount=Entry(screen,borderwidth=5,highlightthickness=0)
         amount.place(x=160,y=390)
 
-        button=Button(screen,text="SUBMIT",font="bold",command=lambda:money_update.score(screen,namelist,money,initial_money,selectedname.get(),buyorsell.get(),amount.get()),border=1,height=1)
+        #added money_labels
+        button=Button(screen,text="SUBMIT",font="bold",command=lambda:money_update.score(screen,namelist,money,initial_money,selectedname.get(),buyorsell.get(),amount.get(), money_labels),border=1,height=1)
         button.place(x=350,y=400)
 
 

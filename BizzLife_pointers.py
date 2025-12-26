@@ -9,4 +9,3 @@ def create_pointers(self):
     self.pointer2_position = 0
     self.pointer2 = Label(self.master, text="P2", font=("Arial", 16), fg="#ffffff",bg="blue")
     self.pointer2.place(x=61, y=669)
-
