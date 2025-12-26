@@ -3,6 +3,7 @@ from tkinter import *
 
 
 namelist=["player1","player2"]
+money = [50000, 50000]
 
 
 def score(screen, namelist, money, initial_money,name, buyorsell, amount, money_labels):

@@ -14,16 +14,15 @@ def click_balance():
 
         placey=80
         initial_money= 50000
-        money=[]
-        for i in namelist:
-            money.append(initial_money)             #EACH PLAYER WILL HAVE INITIAL MONEY ADDED TO THE LIST
+        money = money_update.money
+        
         money_labels = []
 
         for j in namelist:
             namedroplabels=Label(screen,text=j,font="bold,16")
             namedroplabels.place(x=20,y=placey)            #y is for better spacing between each name
 
-            moneydroplabel=Label(screen,text=initial_money,font="bold,16")
+            moneydroplabel=Label(screen,text=money[namelist.index(j)],font="bold,16")
             moneydroplabel.place(x=200,y=placey)
 
             money_labels.append(moneydroplabel) #to prevent overwriting

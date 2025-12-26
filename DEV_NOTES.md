@@ -20,3 +20,13 @@ Problem:
 Solution:
 - Created a new array to store the updated values
 - Takes the values from the array and renders on the screen instead of overwriting
+
+## Bank: History storage (ver2)
+
+Problem:
+- Bank had to be minimized everytime after updating since it was not able to store history
+
+Solution:
+- Changed money = [50000, 50000] as a global variable in money_update.py
+- It now stores even after closing the bank window
+
