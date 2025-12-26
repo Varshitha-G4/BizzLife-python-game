@@ -34,32 +34,27 @@ def click_balance():
             placey+=35                                  #distance between each player gets added
 
         namedropdownlabel=Label(screen,text="Select Player",font="bold,11")
-        namedropdownlabel.place(x=20,y=320)
+        namedropdownlabel.place(x=20,y=310)
 
         selectedname=StringVar()
         selectedname.set("player name")
         drop=OptionMenu(screen,selectedname,*namelist)
-        drop.place(x=160,y=323)
+        drop.place(x=160,y=310)
 
-        buyorsellLabel=Label(screen,text="Enter Option",font="bold,11")
-        buyorsellLabel.place(x=20,y=350)
-
-        buyorsell=StringVar()
-        buyorsell.set("select option")
-        buysorsell=["ADD","DEDUCT"]
-        buyorsells=OptionMenu(screen,buyorsell,*buysorsell)
-        buyorsells.place(x=160,y=353)
-
+        add_button = Button(screen, text="ADD", font="bold", bg="#26dc93",
+                            command=lambda: money_update.score(screen, namelist, money, initial_money,
+                                                                selectedname.get(), "ADD", amount.get(), money_labels))
+        add_button.place(x=160, y=390)
+        deduct_button = Button(screen, text="DEDUCT", font="bold", bg="#f15874",
+                               command=lambda: money_update.score(screen, namelist, money, initial_money, 
+                                                                  selectedname.get(), "DEDUCT", amount.get(), money_labels))
+        deduct_button.place(x=250, y=390)
         amountLabel=Label(screen,text="Amount",font="bold,11")
-        amountLabel.place(x=20,y=380)
+        amountLabel.place(x=20,y=350)
 
 
         amount=Entry(screen,borderwidth=5,highlightthickness=0)
-        amount.place(x=160,y=390)
-
-        #added money_labels
-        button=Button(screen,text="SUBMIT",font="bold",command=lambda:money_update.score(screen,namelist,money,initial_money,selectedname.get(),buyorsell.get(),amount.get(), money_labels),border=1,height=1)
-        button.place(x=350,y=400)
+        amount.place(x=160,y=350)
 
 
     gamescreen(money_update.namelist)
