@@ -1,8 +1,6 @@
 # BizzLife
-
 ## A Python-based digital board game inspired by the popular board game "Business"
 
----
 
 ## Introduction
 
@@ -16,13 +14,14 @@ The project focuses on:
 
 This project was developed as a learning exercise to understand GUI frameworks, game flow logic, and clean project structuring in Python.
 
----
 
 ## Demo Video
 
 📽 **Project Walkthrough Video:**  
 
----
+https://github.com/user-attachments/assets/8ca36cfb-5ee9-4ccd-a730-553bd651dbd7
+
+
 
 ## Features
 
@@ -33,7 +32,6 @@ This project was developed as a learning exercise to understand GUI frameworks, 
 - Keyboard-based pawn movement
 - Modular code structure for easier extension
 
----
 
 ## How to Run the Project (User Instructions)
 
@@ -53,8 +51,6 @@ This project was developed as a learning exercise to understand GUI frameworks, 
     python BizzLife_Final.py
     ```
 
----
-
 ## Known Issues / Future Improvements
 
 ### The following enhancements are planned for future versions:
@@ -67,8 +63,6 @@ This project was developed as a learning exercise to understand GUI frameworks, 
 
 3. **Support for More Players**
     - Extend the game beyond the current 2-player limit to support multiple players dynamically.
-
----
 
 ## License
 This project is intended for educational purposes.
